@@ -63,7 +63,7 @@ list.forEach((item) => {
 // Lưu form vào GG sheet
 
 const GOOGLE_SCRIPT_URL_THAM_DU =
-  "https://script.google.com/macros/s/AKfycbw_QpUHb-E71PIlBRwk2LownQl64eykQI4ti8a--1nWil_GazaBD0kZn9WalaIoVmeH/exec";
+  "https://script.google.com/macros/s/AKfycbxl6vj8gRG9iqDZk2WAueuadmy7fFv7VGvXzv1fIHQGZYjdcLWq75rZd2tjzr3VqdGQmA/exec";
 
 const closeIds = ["w-ysykddk8"];
 const formIds = ["3jnfqzjo"];
@@ -132,7 +132,7 @@ formIds.forEach(function (id, index) {
 </style> */
 }
 
-const sheetID = "13AQHqDuOen4hn3Tuz-Nf6jQm8cqX4A32mF8UsznS_sY";
+const sheetID = "1ke1lxsB5RFEHpLdNxQjy_khSrcq604sn-W36ppgJ9rw";
 const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
 
 let messages = []; // Chuyển sang `let`
@@ -204,7 +204,7 @@ async function fetchMessages() {
     const data = await res.text();
     const json = JSON.parse(data.substring(47).slice(0, -2));
     const rows = json.table.rows.map((row) =>
-      row.c.map((cell) => cell?.v || "")
+      row.c.map((cell) => cell?.v || ""),
     );
     const headers = rows[0];
 
@@ -257,16 +257,16 @@ function updateCountdown(targetDateStr) {
 
   // Hiển thị lên các phần tử
   const elDay = document.querySelector(
-    "#COUNTDOWN_ITEM1 .ladi-countdown-text span"
+    "#COUNTDOWN_ITEM1 .ladi-countdown-text span",
   );
   const elHour = document.querySelector(
-    "#COUNTDOWN_ITEM2 .ladi-countdown-text span"
+    "#COUNTDOWN_ITEM2 .ladi-countdown-text span",
   );
   const elMinute = document.querySelector(
-    "#COUNTDOWN_ITEM3 .ladi-countdown-text span"
+    "#COUNTDOWN_ITEM3 .ladi-countdown-text span",
   );
   const elSecond = document.querySelector(
-    "#COUNTDOWN_ITEM4 .ladi-countdown-text span"
+    "#COUNTDOWN_ITEM4 .ladi-countdown-text span",
   );
 
   if (elDay) elDay.textContent = days.toString().padStart(2, "0");

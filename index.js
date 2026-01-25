@@ -139,8 +139,8 @@ let messages = []; // Chuyển sang `let`
 
 // Cấu hình
 const config = {
-  displayDuration: 4000,
-  intervalTime: 7000,
+  displayDuration: 5000,
+  intervalTime: 9000,
 };
 
 let autoInterval;
@@ -234,9 +234,7 @@ function isAdminTarget() {
 
 // Khởi tạo khi load trang
 window.addEventListener("load", () => {
-  if (isAdminTarget()) {
-    fetchMessages(); // Chỉ gọi khi ?target=admin
-  }
+  fetchMessages(); // Chỉ gọi khi ?target=admin
 });
 
 // CountDown đếm ngược thời gian
